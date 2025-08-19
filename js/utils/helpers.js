@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 // Helper utilities
-=======
->>>>>>> a1833b4 (initial)
 const Helpers = {
     showToast(message, isError = false) {
         const toast = document.createElement('div');
@@ -12,7 +9,6 @@ const Helpers = {
         `;
         document.body.appendChild(toast);
 
-<<<<<<< HEAD
         setTimeout(() => toast.classList.add('opacity-100'), 10);
         setTimeout(() => {
             toast.classList.remove('opacity-100');
@@ -25,20 +21,3 @@ const Helpers = {
     }
 };
     
-=======
-        // Animate in
-        setTimeout(() => toast.classList.add('opacity-100'), 10);
-        
-        // Remove after 3 seconds
-        setTimeout(() => {
-            toast.style.opacity = '0';
-            setTimeout(() => toast.remove(), 300);
-        }, 3000);
-    },
-
-    calculateProgress(currentPage, totalPages) {
-        if (!currentPage || !totalPages) return 0;
-        return Math.min(Math.round((currentPage / totalPages) * 100), 100);
-    }
-};
->>>>>>> a1833b4 (initial)

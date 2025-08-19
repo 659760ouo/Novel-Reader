@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 // Auth Screen Component
-=======
->>>>>>> a1833b4 (initial)
 const AuthScreen = {
     render() {
         return `
@@ -82,11 +79,7 @@ const AuthScreen = {
                             
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">
-<<<<<<< HEAD
                                     Password (min. 6 chars)
-=======
-                                    Password
->>>>>>> a1833b4 (initial)
                                 </label>
                                 <input
                                     type="password"
@@ -109,7 +102,6 @@ const AuthScreen = {
             </div>
         `;
     },
-<<<<<<< HEAD
     
     setupListeners() {
         // Tab switching
@@ -156,63 +148,3 @@ const AuthScreen = {
     }
 };
     
-=======
-
-    setupListeners() {
-        // Tab switching
-        document.getElementById('loginTab').addEventListener('click', () => {
-            document.getElementById('loginTab').classList.add('tab-active', 'border-b-2');
-            document.getElementById('registerTab').classList.remove('tab-active', 'border-b-2');
-            document.getElementById('loginTab').classList.remove('text-gray-500');
-            document.getElementById('registerTab').classList.add('text-gray-500');
-            document.getElementById('loginFormContainer').classList.remove('hidden');
-            document.getElementById('registerFormContainer').classList.add('hidden');
-        });
-
-        document.getElementById('registerTab').addEventListener('click', () => {
-            document.getElementById('registerTab').classList.add('tab-active', 'border-b-2');
-            document.getElementById('loginTab').classList.remove('tab-active', 'border-b-2');
-            document.getElementById('registerTab').classList.remove('text-gray-500');
-            document.getElementById('loginTab').classList.add('text-gray-500');
-            document.getElementById('registerFormContainer').classList.remove('hidden');
-            document.getElementById('loginFormContainer').classList.add('hidden');
-        });
-
-        // Login form
-        document.getElementById('loginForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const username = document.getElementById('loginUsername').value;
-            const password = document.getElementById('loginPassword').value;
-            
-            const result = Auth.login(username, password);
-            if (result.success) {
-                Helpers.showToast('Login successful!');
-                app.render();
-            } else {
-                Helpers.showToast(result.message, true);
-            }
-        });
-
-        // Register form
-        document.getElementById('registerForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('regName').value;
-            const username = document.getElementById('regUsername').value;
-            const password = document.getElementById('regPassword').value;
-            
-            if (password.length < 6) {
-                Helpers.showToast('Password must be at least 6 characters', true);
-                return;
-            }
-            
-            const result = Auth.register(name, username, password);
-            if (result.success) {
-                Helpers.showToast('Registration successful!');
-                app.render();
-            } else {
-                Helpers.showToast(result.message, true);
-            }
-        });
-    }
-};
->>>>>>> a1833b4 (initial)
